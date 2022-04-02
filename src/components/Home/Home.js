@@ -1,9 +1,17 @@
 import React from 'react';
+import Cart from '../Cart/Cart';
+import "./Home.css"
 
 const Home = () => {
     return (
-        <div>
-            <h2>This is our home page.</h2>
+        <div className="home-container">
+            <div className="tshirt-container">
+
+            </div>
+            <div className="cart-container">
+                <Cart></Cart>
+
+            </div>
         </div>
     );
 };
