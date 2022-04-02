@@ -8,9 +8,17 @@ import "./Home.css"
 const Home = () => {
     const [tshirts, setTshirt] = useTshirt();
     const [cart, setCart] = useState([]);
+
     const handleAddToCart = (selectedItem) => {
-        const newCart = [...cart, selectedItem];
-        setCart(newCart);
+        const exist = cart.find(tshirt => tshirt._id === selectedItem._id);
+        if (!exist) {
+            const newCart = [...cart, selectedItem];
+            setCart(newCart);
+        }
+        else {
+            alert("Item already added");
+        }
+
     }
     const handleRemoveFromCart = (selectedItem) => {
         const rest = cart.filter(tshirt => tshirt._id !== selectedItem._id);
